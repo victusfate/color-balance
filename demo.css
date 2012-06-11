@@ -1,0 +1,291 @@
+.highlight { background-color: yellow }
+
+.big {
+	font-size: 1.5em;
+	margin: 0.83em 0px;
+	font-weight: bold;
+}
+
+button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	var top = $(window).scrollTop();
+    return top >= $(element).offset().top + $(element).height() - settings.threshold;
+}
+button:hover {
+    text-decoration: none;
+}
+button:active {
+    position: relative;
+    top: 1px;
+}
+
+.little 
+{
+    
+}
+.mygrad 
+{
+    font: 40px/100% 14px "Trebuchet MS","Lucida Grande",Verdana,sans-serif;
+    text-shadow:0 5px 5px rgba(0, 0, 0, 0.498);
+    color: #33ffff;
+    background: #00ff00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#00ff00));
+    background: -moz-linear-gradient(top,  #ff0000,  #00ff00);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0000', endColorstr='#00ff00');
+    
+}
+.mygrad:hover 
+{
+    color: red;
+    background: -moz-linear-gradient(top,#00BFFF,#ffffff,#00ff00);
+    background:
+        -webkit-gradient(linear,
+        left top,
+        left bottom,
+        color-stop(0.25, #00BFFF),
+        color-stop(0.49, rgb(255,255,255)),
+        color-stop(1.0, #00ff00));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BFFF', endColorstr='#00ff00');
+}
+.mygrad:active {
+    color: white;
+    background: -webkit-gradient(linear, left top, left bottom, from(#33ffff), to(#ff00ff));
+    background: -moz-linear-gradient(top,  #33ffff,  #ff00ff);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffff', endColorstr='#ff00ff');
+}
+
+
+.orange {
+    color: #fef4e9;
+    border: solid 1px #da7c0c;
+    background: #f78d1d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+    background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+    background: #f47c20;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+    background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+    color: #fcd3a5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+    background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+/* original demo.css from old twitter ticker */
+body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+	margin:0px;
+	padding:0px;
+}
+
+h2.tut{
+	color:white;
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+	font-size:16px;
+	padding:12px 0 0 58px;
+	text-transform:uppercase;
+
+	text-shadow:2px 1px 6px #333;
+}
+
+#twitter-ticker{
+	width:840px;
+	
+/*	height:600px;
+	background:url(img/slickbg.png) no-repeat #f5f5f5;
+	color:#666666;
+	display:none;
+	*/
+
+	-moz-border-radius:10px 10px 6px 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius:6px;
+
+	text-align:left;
+}
+
+#tweet-container{
+	/* height:540px; */
+	width:auto;
+}
+
+#twitIcon{
+	position:absolute;
+	top:-25px;
+	left:-10px;
+	width:64px;
+	height:64px;
+}
+
+#top-bar{
+	height:45px;
+	background:url(../img/top_bar.png) repeat-x;
+	border-bottom:1px solid white;
+	position:relative;
+	margin-bottom:8px;
+
+	-moz-border-radius:6px 6px 0 0;
+}
+
+.tweet{
+	padding:5px;
+	margin:0 8px 8px;
+
+	border:1px solid #F0F0F0;
+	background:url(../img/transparent.png);
+}
+
+.tweet .avatar,
+.tweet .user,
+.tweet .time{
+	float:left;
+}
+
+.tweet .time{
+	text-transform:uppercase;
+	font-size:10px;
+	color:#AAAAAA;
+	white-space:nowrap;
+}
+
+
+.tweet .avatar img{
+	width:36px;
+	height:36px;
+	border:2px solid #eeeeee;
+	margin:0 5px 5px 0;
+}
+
+.tweet .txt{
+	clear:both;
+}
+
+.tweet .user{
+	font-weight:bold;
+}
+
+a, a:visited {
+	color:#00BBFF;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+#loading{
+	margin:100px 95px;
+}
+
+/* The styles below are only necessary for the demo page */
+
+p{
+	padding-top:7px;
+}
+
+#twitter-ticker{
+	margin:40px auto 20px;
+}
+/*
+body{
+	color:white;
+	font-size:13px;
+	background: #333333;
+	font-family:Arial, Helvetica, sans-serif;
+}
+*/
+h1{
+	color:white;
+/*	font-size:36px; */
+	font-weight:bold;
+	font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+}
+
+body {
+	margin-top: 1.0em;
+	background-color: #baf1f2;
+	font-family: "Helvetica,Arial,FreeSans";
+	color: #000000;
+}
+#container {
+	margin: 0 auto;
+	width: 900px;
+}
+
+.limited_title { height:30px; display:block; }
+.limited { height:6000px; overflow:hidden; display:block; }
+.left { margin-left: 0px; float: left;}
+.middle { margin-left: 0px; float: left;}
+.right { margin-left: 0px; float: left;}
+.center { float: center;}
+.redbox { background-color:#FDCECE; border-color:red; width:280px;}
+.bluebox { background-color:#CEFAFD; border-color:cyan; width:280px;}
+.greybox { background-color:grey; border-color:black; width:280px;}
+
+
+
+h1 {
+	font-size: 2em;
+	color: #450e0d;
+	margin-bottom: 3px;
+}
+h1 .small {
+	font-size: 0.4em;
+}
+h1 a {
+	text-decoration: none
+}
+h2 {
+	font-size: 1.5em;
+	color: #450e0d;
+}
+h3 {
+	text-align: center;
+	color: #450e0d;
+}
+a {
+	color: #450e0d;
+}
+.description {
+	font-size: 1.2em;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	font-style: italic;
+}
+.download {
+	float: right;
+}
+pre {
+	background: #000;
+	color: #fff;
+	padding: 15px;
+}
+hr {
+	border: 0;
+	width: 80%;
+	border-bottom: 1px solid #aaa
+}
+.footer {
+	text-align: center;
+	padding-top: 30px;
+	font-style: italic;
+}

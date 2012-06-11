@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Color Balance Test</title>
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <script type="text/coffeescript">
+            $ ->
+                bob = new Image();
+                bob.onload = (evt) ->
+                    canvas = document.getElementById("screen")
+                    if canvas.getContext
+                        canvas.width = @width
+                        canvas.height = @height
+                    ctx = canvas.getContext("2d")
+                    ctx.drawImage bob, 0, 0, @width, @height
+                bob.src = "BobRoss.jpg"
+
+                $('#sup').val 83
+                $('#mup').val 166
+                $('#sr').val 50
+                $('#sg').val 0
+                $('#sb').val 0
+                $('#mr').val 0
+                $('#mg').val 50
+                $('#mb').val 0
+                $('#hr').val 0
+                $('#hg').val 0
+                $('#hb').val 50
+        </script>
+        <script type="text/coffeescript" src="cb.coffee"></script> 
+    </head>
+    <body>
+        <div style="position:relative; height:430px;">
+            <img src="BobRoss.jpg" style="float:left; padding: 20px;" />
+            <canvas id="screen" width="640px" height = "480px" style="float:left; padding: 20px;"> 
+                <h1>This application requires a HTML5 compliant browser.</h1>
+            </canvas>
+        </div>
+        <div style="position:absolute; left: 20px; top:430px;font-size:16px;text-align:left;">
+            <script type="text/javascript">
+                function updateform() {
+                    var srgb = {},mrgb = {},hrgb = {};
+                    srgb.r = $('#sr').val() | 0;
+                    srgb.g = $('#sg').val() | 0;
+                    srgb.b = $('#sb').val() | 0;
+                    mrgb.r = $('#mr').val() | 0;
+                    mrgb.g = $('#mg').val() | 0;
+                    mrgb.b = $('#mb').val() | 0;
+                    hrgb.r = $('#hr').val() | 0;
+                    hrgb.g = $('#hg').val() | 0;
+                    hrgb.b = $('#hb').val() | 0;
+                    console.log(" dvs " + JSON.stringify(srgb) + " dvm " + JSON.stringify(mrgb) + " dvh " + JSON.stringify(hrgb) );
+                    window.cb('screen', $('#sup').val(), $('#mup').val(), srgb, mrgb, hrgb );                    
+                    return false;
+                }
+            </script>
+            <form id="colorForm" onsubmit="return window.updateform();">  
+                <div style="float:right; margin: -10px 10px 0px 0px;">
+                    <br/>
+                    This is a demo for color balancing:<br/> 
+                    shadow upper bound <input id="sup" type="text" value="" />
+                    midtones upper bound <input id="mup" type="text" value="" />
+                    (highlights are applied to anything lighter than midtone upper bound)<br/>
+                    cyan/red, magenta/green and yellow/blue shadows
+                    <input id="sr" type="text" value="" />
+                    <input id="sg" type="text" value="" />
+                    <input id="sb" type="text" value="" />
+                    <br/>
+                    cyan/red, magenta/green and yellow/blue midtones
+                    <input id="mr" type="text" value="" />
+                    <input id="mg" type="text" value="" />
+                    <input id="mb" type="text" value="" />
+                    <br/>
+                    cyan/red, magenta/green and yellow/blue highlights
+                    <input id="hr" type="text" value="" />
+                    <input id="hg" type="text" value="" />
+                    <input id="hb" type="text" value="" />
+                    <br/>
+                    <button onclick="" type="submit" class="mygrad">submit</button>
+                </div>
+            </form>
+        </div>
+
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+        <script>
+            !window.jQuery && document.write('<script src="jquery-1.7.2.min.js"><\/script>');
+        </script>
+        <script type='text/javascript' src="http://coffeescript.org/extras/coffee-script.js"></script>  
+        <script>
+            !window.CoffeeScript && document.write('<script src="coffee-script.js"><\/script>');
+        </script>
+
+
+    </body>
+</html>
