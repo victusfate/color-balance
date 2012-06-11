@@ -6,10 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <title>Color-balance by victusfate</title>
-    <link rel="stylesheet" type="text/css" href="demo.css" />
     <script type="text/coffeescript">
         $ ->
             bob = new Image();
@@ -53,16 +50,16 @@
       </div>
     </header>
 
-    <div class="container">
+<!--    <div class="container">
       <section id="main_content">
-
-        <div style="position:relative; height:430px;">
-            <img src="BobRoss.jpg" style="float:left; padding: 20px;" />
-            <canvas id="screen" width="640px" height = "480px" style="float:left; padding: 20px;"> 
+-->
+        <div style="position:relative; float:left; width:100%;">
+            <img src="BobRoss.jpg" style="float:left; padding: 20px; width:45%;" />
+            <canvas id="screen" width="640px" height = "480px" style="position:relative; float:left; padding: 20px; width:45%;"> 
                 <h1>This application requires a HTML5 compliant browser.</h1>
             </canvas>
         </div>
-        <div style="position:absolute; left: 20px; top:430px;font-size:16px;text-align:left;">
+        <div style="position:relative; left: 20px; font-size:16px;text-align:left; float:left;">
             <script type="text/javascript">
                 function updateform() {
                     var srgb = {},mrgb = {},hrgb = {};
@@ -85,7 +82,7 @@
                     <br/>
                     This is a demo for color balancing:<br/> 
                     shadow upper bound <input id="sup" type="text" value="" />
-                    midtones upper bound <input id="mup" type="text" value="" />
+                    midtones upper bound <input id="mup" type="text" value="" /><br/>
                     (highlights are applied to anything lighter than midtone upper bound)<br/>
                     cyan/red, magenta/green and yellow/blue shadows
                     <input id="sr" type="text" value="" />
@@ -116,7 +113,8 @@
             !window.CoffeeScript && document.write('<script src="coffee-script.js"><\/script>');
         </script>
       
-      </section>
+<!--       </section>
     </container>
+    -->
   </body>
 </html>
