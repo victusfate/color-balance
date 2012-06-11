@@ -94,17 +94,18 @@ color_balance = (val, l, sup, mup, dvs, dvm, dvh) ->
 
 
 cb = (canvas_id, sup, mup, dvs, dvm, dvh) ->
-    window.bob.src = "BobRoss.jpg"    
+    canvas = document.getElementById(canvas_id)
+    ctx = canvas.getContext("2d")
+    ctx.drawImage window.bob, 0, 0, canvas.width, canvas.height
+    
     [dvsr, dvsg, dvsb] = [dvs.r, dvs.g, dvs.b]
     [dvmr, dvmg, dvmb] = [dvm.r, dvm.g, dvm.b]
     [dvhr, dvhg, dvhb] = [dvh.r, dvh.g, dvh.b]
     console.log "sup, mup, dvs, dvm, dvh "+ sup + "," + mup + "," +
-    canvas = document.getElementById(canvas_id)
     width = canvas.width
     console.log "width "+width
     height = canvas.height
     console.log "height "+height
-    ctx = canvas.getContext('2d')
     dataContainer = ctx.getImageData(0, 0, width, height)
     data = dataContainer.data
     dim = width * height * 4
