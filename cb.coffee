@@ -94,6 +94,7 @@ color_balance = (val, l, sup, mup, dvs, dvm, dvh) ->
 
 
 cb = (canvas_id, sup, mup, dvs, dvm, dvh) ->
+    window.bob.src = "BobRoss.jpg"    
     [dvsr, dvsg, dvsb] = [dvs.r, dvs.g, dvs.b]
     [dvmr, dvmg, dvmb] = [dvm.r, dvm.g, dvm.b]
     [dvhr, dvhg, dvhb] = [dvh.r, dvh.g, dvh.b]
