@@ -1,36 +1,61 @@
-<!DOCTYPE html> 
-<html> 
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Color Balance Test</title>
-        <link rel="stylesheet" type="text/css" href="demo.css" />
-        <script type="text/coffeescript">
-            $ ->
-                bob = new Image();
-                bob.onload = (evt) ->
-                    canvas = document.getElementById("screen")
-                    if canvas.getContext
-                        canvas.width = @width
-                        canvas.height = @height
-                    ctx = canvas.getContext("2d")
-                    ctx.drawImage bob, 0, 0, @width, @height
-                bob.src = "BobRoss.jpg"
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-                $('#sup').val 83
-                $('#mup').val 166
-                $('#sr').val 50
-                $('#sg').val 0
-                $('#sb').val 0
-                $('#mr').val 0
-                $('#mg').val 50
-                $('#mb').val 0
-                $('#hr').val 0
-                $('#hg').val 0
-                $('#hb').val 50
-        </script>
-        <script type="text/coffeescript" src="cb.coffee"></script> 
-    </head>
-    <body>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Color-balance by victusfate</title>
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    <script type="text/coffeescript">
+        $ ->
+            bob = new Image();
+            bob.onload = (evt) ->
+                canvas = document.getElementById("screen")
+                if canvas.getContext
+                    canvas.width = @width
+                    canvas.height = @height
+                ctx = canvas.getContext("2d")
+                ctx.drawImage bob, 0, 0, @width, @height
+            bob.src = "BobRoss.jpg"
+
+            $('#sup').val 83
+            $('#mup').val 166
+            $('#sr').val 50
+            $('#sg').val 0
+            $('#sb').val 0
+            $('#mr').val 0
+            $('#mg').val 50
+            $('#mb').val 0
+            $('#hr').val 0
+            $('#hg').val 0
+            $('#hb').val 50
+    </script>
+    <script type="text/coffeescript" src="cb.coffee"></script> 
+    
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Color-balance</h1>
+        <h2>image processing for dynamic shadows, midtones, and highlights and color levels</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/victusfate/color-balance/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/victusfate/color-balance/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/victusfate/color-balance" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+
         <div style="position:relative; height:430px;">
             <img src="BobRoss.jpg" style="float:left; padding: 20px;" />
             <canvas id="screen" width="640px" height = "480px" style="float:left; padding: 20px;"> 
@@ -90,7 +115,8 @@
         <script>
             !window.CoffeeScript && document.write('<script src="coffee-script.js"><\/script>');
         </script>
-
-
-    </body>
+      
+      </section>
+    </container>
+  </body>
 </html>
