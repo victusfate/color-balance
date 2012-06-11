@@ -9,15 +9,15 @@
     <title>Color-balance by victusfate</title>
     <script type="text/coffeescript">
         $ ->
-            bob = new Image();
-            bob.onload = (evt) ->
+            window.bob = new Image();
+            window.bob.onload = (evt) ->
                 canvas = document.getElementById("screen")
                 if canvas.getContext
                     canvas.width = @width
                     canvas.height = @height
                 ctx = canvas.getContext("2d")
-                ctx.drawImage bob, 0, 0, @width, @height
-            bob.src = "BobRoss.jpg"
+                ctx.drawImage window.bob, 0, 0, @width, @height
+            window.bob.src = "BobRoss.jpg"
 
             $('#sup').val 83
             $('#mup').val 166
