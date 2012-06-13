@@ -118,9 +118,9 @@ cb = (canvas_id, sup, mup, dvs, dvm, dvh) ->
         g = data[i1]
         b = data[i2]
         [h,s,l] = rgb_to_hsl(r,g,b)
-        data[i] = color_balance(r, l, sup, mup, dvsr, dvsg, dvsb)
-        data[i1] = color_balance(g, l, sup, mup, dvmr, dvmg, dvmb)
-        data[i2] = color_balance(b, l, sup, mup, dvhr, dvhg, dvhb)
+        data[i] = color_balance(r, l, sup, mup, dvsr, dvmr, dvhr)
+        data[i1] = color_balance(g, l, sup, mup, dvsg, dvmg, dvhg)
+        data[i2] = color_balance(b, l, sup, mup, dvsb, dvmb, dvhb)
         if (i >= 144) and (i <= 288)
             console.log "i "+ i + " r,g,b " + r + "," + g + "," + b + " h,s,l " \
                 + h + "," + s + "," + l + " data out " + data[i] + "," + data[i1] + "," + data[i2] \
