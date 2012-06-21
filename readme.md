@@ -1,4 +1,4 @@
-![color-balance](https://github.com/victusfate/color-balance/raw/master/color-balance.png)
+![color-balance](https://github.com/victusfate/color-balance/raw/gh-pages/color-balance.png)
 Color Balance
 ===
 
