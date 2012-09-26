@@ -90,7 +90,7 @@ color_balance = (val, l, sup, mup, dvs, dvm, dvh) ->
         mrange = (mup - sup)/2
         mid = mrange + sup
         diff = mid - l
-        if (diff < 0) diff = -diff
+        diff = -diff if (diff < 0) 
         f = 1.0 - (diff + 1) / (mrange + 1)
         value += dvm * f
     else
