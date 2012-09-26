@@ -82,12 +82,20 @@ hsl_to_rgb = (h,s,l) ->
 
 color_balance = (val, l, sup, mup, dvs, dvm, dvh) ->
     value = val
+
     if l < sup
-        value += dvs
+        f = (sup - l + 1)/(sup + 1)
+        value += dvs * f
     else if l < mup
-        value += dvm
-    else 
-        value += dvh
+        mrange = (mup - sup)/2
+        mid = mrange + sup
+        diff = mid - l
+        if (diff < 0) diff = -diff
+        f = 1.0 - (diff + 1) / (mrange + 1)
+        value += dvm * f
+    else
+        f = (l - mup + 1)/(255 - mup + 1)
+        value += dvh * f
         
     value = Math.min(255,Math.max(0,value))
 
