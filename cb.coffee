@@ -94,7 +94,7 @@ color_balance = (val, l, sup, mup, dvs, dvm, dvh) ->
         f = 1.0 - (diff + 1) / (mrange + 1)
         value += dvm * f
     else
-        if = (l - mup + 1)/(255 - mup + 1)
+        f = (l - mup + 1)/(255 - mup + 1)
         value += dvh * f
         
     value = Math.min(255,Math.max(0,value))
